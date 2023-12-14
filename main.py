@@ -1,4 +1,3 @@
-import typing as ty
 import sys
 
 def emojify(text : str) -> str:
