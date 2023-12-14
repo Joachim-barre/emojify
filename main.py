@@ -1,13 +1,12 @@
 import sys
 from utils import emojify
+from flask import Flask, render_template
 
-def main() -> int:
-    print(emojify(sys.argv[1]))
-    return 0
+app = Flask(__name__)
+
+@app.route("/") 
+def home(): 
+    return render_template("index.html")
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        exit(main())
-    else:
-        print("this program require exacly one argument")
-        exit(1)
+    app.run()
