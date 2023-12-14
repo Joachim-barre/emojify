@@ -1,7 +1,11 @@
 import typing as ty
 import sys
 
+def emojify(text : str) -> str:
+    return text
+
 def main() -> int:
+    print(emojify(sys.argv[1]))
     return 0
 
 if __name__ == "__main__":
