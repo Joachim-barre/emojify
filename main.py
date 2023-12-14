@@ -4,7 +4,7 @@ import sys
 def emojify(text : str) -> str:
     output : str = ""
     for i in text:
-        output += chr(0x0001f600 + ord(i))
+        output += chr(0x0001f600 + ord(i) - 32)
     return output
 
 def main() -> int:
