@@ -1,4 +1,3 @@
-import sys
 from utils import emojify
 from flask import Flask, render_template
 
