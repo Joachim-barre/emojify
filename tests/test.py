@@ -1,4 +1,4 @@
-import main
+import utils
 import pytest
 
 @pytest.mark.parametrize(
@@ -10,7 +10,7 @@ import pytest
     ]
 )
 def test_emojify(argument : str, expected : str):
-    assert(main.emojify(argument) == expected)
+    assert(utils.emojify(argument) == expected)
 
 
 @pytest.mark.parametrize(
@@ -22,6 +22,6 @@ def test_emojify(argument : str, expected : str):
     ]
 )
 def test_emojify_invalid(argument : str, expected : str):
-    assert(main.emojify(argument) == expected)
+    assert(utils.emojify(argument) == expected)
 
 
