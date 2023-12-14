@@ -1,8 +1,14 @@
 import main
 import pytest
 
-def test_emojify():
-    assert(main.emojify('a') == '🕡')
-    assert(main.emojify('A') == '🕁')
-    assert(main.emojify('abcdefgh') == '🕡🕢🕣🕥🕦🕧🕨')
+@pytest.mark.parametrize(
+    "argument, expected",
+    [ 
+        ('a', '🕡'),
+        ('A', '🕁'),
+        ('abcdefgh', '🕡🕢🕣🕤🕥🕦🕧🕨')
+    ]
+)
+def test_emojify(argument : str, expected : str):
+    assert(main.emojify(argument) == expected)
 
