@@ -12,3 +12,16 @@ import pytest
 def test_emojify(argument : str, expected : str):
     assert(main.emojify(argument) == expected)
 
+
+@pytest.mark.parametrize(
+    "argument, expected",
+    [ 
+        ('a🔫', '🕡?'),
+        ('🔚', '?'),
+        ('ab📠d🕡🕢h', '🕡🕢?🕤??🕨')
+    ]
+)
+def test_emojify_invalid(argument : str, expected : str):
+    assert(main.emojify(argument) == expected)
+
+
