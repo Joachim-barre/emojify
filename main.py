@@ -1,4 +1,5 @@
 from utils import emojify
+import argparse
 from flask import Flask, render_template, redirect, url_for, request 
 
 app = Flask(__name__, template_folder="html")
@@ -11,9 +12,18 @@ def home():
 @app.route("/encode", methods=["POST"])
 def encoder(): 
     if request.method == 'POST':
+        text = request.form['to_encode']
         return emojify(text)
     return redirect(url_for('home'))
 
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser(
+                    prog='Emojify',
+                    description='Web app that encode text to emoji')
+    parser.add_argument('-d', '--debug',
+                    action='store_true')
+    args = parser.parse_args()
+    app.run(debug=args.debug)
 
-    app.run()
+if __name__ == "__main__":
+    main()
