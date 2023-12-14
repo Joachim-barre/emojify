@@ -3,10 +3,32 @@
         <title>Emojify</title> </head> 
     <body>
         <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
-        <form method="post", action="/encode", target="dummyframe">
+        <form method="post", id="encode", action="/encode", target="dummyframe">
             <label for="to_encode">text to encode:</label><br>
             <input type="text" id="to_encode" name="to_encode", value="hello"><ibr>
             <input type="submit" value="Encode">
         </form>
+        <h3 id="response"></h3>
+        <script>
+            document.getElementById("encode").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                var formData = new FormData(this);
+
+                // Use AJAX to send the form data to the server
+                fetch("/encode", {
+                    method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                    // Display the response on the page
+                    document.getElementById("response").innerHTML = "Encoded: " + data;
+                })
+                .catch(error => {
+                console.error("Error:", error);
+                });
+            });
+        </script>
     </body> 
 </html>
