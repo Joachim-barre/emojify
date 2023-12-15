@@ -4,8 +4,8 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
     </head>
     <body>
+        <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
         <div class="encoder">
-            <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
             <form method="post", id="encode", action="/encode", target="dummyframe", class="encode">
                 <label for="to_encode">text to encode:</label><br>
                 <input type="text" id="to_encode" name="to_encode", value="hello"><ibr>
