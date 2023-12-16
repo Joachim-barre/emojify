@@ -1,17 +1,25 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .encoder {
-    padding : 5px;
+    width: 50%;
+    height: 25%;
+    padding: 5px;
     border: 2px solid black;
+    text-align: center;
 }
 
 .decoder {
+    width: 50%;
+    height: 25%;
     padding: 5px;
     border: 2px solid black;
+    text-align: center;
 }
