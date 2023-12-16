@@ -1,4 +1,4 @@
-from utils import emojify
+from utils import emojify, demojify
 import argparse
 from flask import Flask, render_template, redirect, url_for, request 
 
@@ -15,6 +15,14 @@ def encoder():
         text = request.form['to_encode']
         return emojify(text)
     return redirect(url_for('home'))
+
+@app.route("/decode", methods=["POST"])
+def decoder(): 
+    if request.method == 'POST':
+        text = request.form['to_decode']
+        return demojify(text)
+    return redirect(url_for('home'))
+
 
 def main():
     parser = argparse.ArgumentParser(
