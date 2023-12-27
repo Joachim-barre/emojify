@@ -16,4 +16,5 @@ COPY . /app
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
-CMD [ "app.py" ]
+EXPOSE 5000
+CMD [ "app.py" , "-a", "0.0.0.0"]
