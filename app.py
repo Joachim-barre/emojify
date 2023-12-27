@@ -30,8 +30,11 @@ def main():
                     description='Web app that encode text to emoji')
     parser.add_argument('-d', '--debug',
                     action='store_true')
+    parser.add_argument('-a', '--address',
+                    help="address that the app should use",
+                    default="127.0.0.1")
     args = parser.parse_args()
-    app.run(debug=args.debug)
+    app.run(debug=args.debug,host=args.address)
 
 if __name__ == "__main__":
     main()
