@@ -1,4 +1,5 @@
-import utils
+import test_setup
+import utils 
 import pytest
 
 @pytest.mark.parametrize(
