@@ -4,7 +4,7 @@
 
 A simple app that encode ascii text into emoji and decode it
 
-## how to us
+## how to use
 
 ### building the container
 
